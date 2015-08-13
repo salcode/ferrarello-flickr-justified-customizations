@@ -26,7 +26,7 @@ class Ferrarello_Flickr_Justified_Customizations {
 	 */
 	function replace_justifiedGallery_js() {
 		wp_deregister_script( 'justifiedGallery' );
-		wp_register_script('justifiedGallery', plugins_url('js/jquery.justifiedGallery-modified.min.js', __FILE__), 
+		wp_register_script('justifiedGallery', plugins_url('js/jquery.justifiedGallery-modified.min.js', __FILE__),
 			array('jquery'), 'v3.6', true);
 	}
 
@@ -46,9 +46,12 @@ class Ferrarello_Flickr_Justified_Customizations {
 		$this->add_youtube_videos_filter_setup();
 
 		foreach ( $this->flickr_ids as $flickr_id ) {
-			$content .= fjgwpp_flickr_set( array(
-				'id' => $flickr_id,
-			) );
+
+			if ( $flickr_id ) {
+				$content .= fjgwpp_flickr_set( array(
+					'id' => $flickr_id,
+				) );
+			}
 		}
 
 		return $content;
