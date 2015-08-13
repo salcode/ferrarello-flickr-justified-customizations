@@ -20,7 +20,10 @@ class Ferrarello_Flickr_Justified_Customizations {
 	}
 
 	function the_content_filter( $content ) {
-		if ( ! $this->is_flickr_post() ) {
+		if (
+			! $this->is_flickr_post()
+			|| ! function_exists( 'fjgwpp_flickr_set' )
+		) {
 			return $content;
 		}
 
