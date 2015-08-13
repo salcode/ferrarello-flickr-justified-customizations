@@ -17,6 +17,17 @@ class Ferrarello_Flickr_Justified_Customizations {
 
 	function __construct() {
 		add_filter( 'the_content', array( $this, 'the_content_filter' ) );
+		add_action('wp_print_scripts', array( $this, 'replace_justifiedGallery_js' ), 1 );
+	}
+
+	/**
+	 * Replace JustifiedGallery with my modified version which allows
+	 * opting-out of sizeRangeSuffixes
+	 */
+	function replace_justifiedGallery_js() {
+		wp_deregister_script( 'justifiedGallery' );
+		wp_register_script('justifiedGallery', plugins_url('js/jquery.justifiedGallery-modified.min.js', __FILE__), 
+			array('jquery'), 'v3.6', true);
 	}
 
 	function the_content_filter( $content ) {
