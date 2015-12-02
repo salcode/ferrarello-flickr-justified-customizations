@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Ferrarello Flickr Justified Customizations
  * Description: Modifications to Flickr Justified for use on Ferrarello.com.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  */
