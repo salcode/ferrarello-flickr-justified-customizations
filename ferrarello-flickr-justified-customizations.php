@@ -41,7 +41,13 @@ class Ferrarello_Flickr_Justified_Customizations {
 		$post_id = get_the_ID();
 
 		$this->flickr_ids =     explode( ',', get_post_meta( $post_id, 'salogic_flickr_list',  true ) );
-		$this->youtube_videos = explode( ',', get_post_meta( $post_id, 'salogic_youtube_list', true ) );
+
+		$youtube_post_meta = get_post_meta( $post_id, 'salogic_youtube_list', true );
+		if ( '' !== trim( $youtube_post_meta ) ) {
+			$this->youtube_videos = explode( ',', $youtube_post_meta );
+		} else {
+			$this->youtube_videos = array();
+		}
 
 		$this->add_youtube_videos_filter_setup();
 
