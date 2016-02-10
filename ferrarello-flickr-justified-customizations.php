@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Ferrarello Flickr Justified Customizations
  * Description: Modifications to Flickr Justified for use on Ferrarello.com.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  */
@@ -80,7 +80,7 @@ class Ferrarello_Flickr_Justified_Customizations {
 			. ' rel="' . $flickrGalID . '"'
 			. ' href="https://youtu.be/' . $youtube_id . '">'
 			. '<img data-skip-size-range-suffixes="true"'
-			. ' src="http://img.youtube.com/vi/' . $youtube_id . '/0.jpg"'
+			. ' src="https://img.youtube.com/vi/' . $youtube_id . '/0.jpg"'
 			. ' alt="Video"></a>';
 	}
 
