@@ -78,7 +78,7 @@ class Ferrarello_Flickr_Justified_Customizations {
 	function youtube_markup( $youtube_id, $id, $lightbox, $flickrGalID ) {
 		return '<a class="fe-youtube-video ' . $lightbox.'-video"'
 			. ' rel="' . $flickrGalID . '"'
-			. ' href="https://youtu.be/' . $youtube_id . '">'
+			. ' href="https://www.youtube.com/watch?v=' . $youtube_id . '">'
 			. '<img data-skip-size-range-suffixes="true"'
 			. ' src="https://img.youtube.com/vi/' . $youtube_id . '/0.jpg"'
 			. ' alt="Video"></a>';
