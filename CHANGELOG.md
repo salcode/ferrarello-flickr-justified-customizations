@@ -3,6 +3,10 @@ Ferrarello Flickr Justified Customizations
 
 ## [Unreleased][unreleased]
 
+## [1.0.3] - 2016-09-15
+### Fixed
+- Updated YouTube href URL to use full youtube URL. This corrects video loading issues.
+
 ## [1.0.2] - 2016-02-10
 ### Fixed
 - Updated YouTube thumbnail URL to use https instead of http
