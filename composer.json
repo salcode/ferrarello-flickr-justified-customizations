@@ -1,0 +1,10 @@
+{
+	"name": "salcode/ferrarello-flickr-justified-customizations",
+	"description": "WordPress plugin to extend https://wordpress.org/plugins/flickr-justified-gallery/ for ferrarello.com",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/salcode/ferrarello-flickr-justified-customizations",
+	"license": "GPL-2.0+",
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}
