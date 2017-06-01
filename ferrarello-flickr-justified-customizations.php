@@ -49,8 +49,6 @@ class Ferrarello_Flickr_Justified_Customizations {
 			$this->youtube_videos = array();
 		}
 
-		$this->add_youtube_videos_filter_setup();
-
 		foreach ( $this->flickr_ids as $flickr_id ) {
 
 			if ( $flickr_id ) {
@@ -63,9 +61,7 @@ class Ferrarello_Flickr_Justified_Customizations {
 		// Find the last closing </div>, this closes the list of pictures.
 		$position_of_final_div = strrpos( $content, '</div>' );
 
-		// Use the filter `fjgwpp_add_entries` to allow adding more items.
-		// This item was previously included in the flickr-justified-gallery plugin but has since been removed.
-		$videos_markup = apply_filters( 'fjgwpp_add_entries', '', $post_id, 'swipebox', $flickr_id );
+		$videos_markup = $this->get_videos_markup( $post_id, 'swipebox', $flickr_id );
 
 		// Add the additional markup (for videos) at the appropriate position (before the closing div).
 		$content = substr_replace( $content, $videos_markup, $position_of_final_div, 0 );
@@ -73,15 +69,11 @@ class Ferrarello_Flickr_Justified_Customizations {
 		return $content;
 	}
 
-	function add_youtube_videos_filter_setup() {
-		add_filter( 'fjgwpp_add_entries', array( $this, 'fjgwpp_add_entries_filter' ), 10, 4 );
-	}
-
-	function fjgwpp_add_entries_filter( $add_entries_content, $id, $lightbox, $flickrGalID ) {
+	function get_videos_markup( $id, $lightbox, $flickrGalID ) {
+		$add_entries_content = '';
 		foreach( $this->youtube_videos as $youtube_id ) {
 			$add_entries_content .= $this->youtube_markup( $youtube_id, $id, $lightbox, $flickrGalID );
 		}
-		remove_filter( 'fjgwpp_add_entries', array( $this, 'fjgwpp_add_entries_filter' ) );
 		return $add_entries_content;
 	}
 
