@@ -2,6 +2,8 @@ Ferrarello Flickr Justified Customizations
 ==========================================
 
 ## [Unreleased][unreleased]
+
+## [2.0.0] - 2017-06-01
 ### Fixed
 - The Flickr Justified Gallery no longer has the `fjgwpp_add_entries_filter`. We've modifed our code to add the videos without the filter. (See #9).
 
