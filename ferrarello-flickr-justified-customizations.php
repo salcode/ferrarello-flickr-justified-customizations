@@ -60,6 +60,16 @@ class Ferrarello_Flickr_Justified_Customizations {
 			}
 		}
 
+		// Find the last closing </div>, this closes the list of pictures.
+		$position_of_final_div = strrpos( $content, '</div>' );
+
+		// Use the filter `fjgwpp_add_entries` to allow adding more items.
+		// This item was previously included in the flickr-justified-gallery plugin but has since been removed.
+		$videos_markup = apply_filters( 'fjgwpp_add_entries', '', $post_id, 'swipebox', $flickr_id );
+
+		// Add the additional markup (for videos) at the appropriate position (before the closing div).
+		$content = substr_replace( $content, $videos_markup, $position_of_final_div, 0 );
+
 		return $content;
 	}
 
